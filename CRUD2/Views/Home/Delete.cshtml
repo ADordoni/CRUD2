@@ -1,0 +1,55 @@
+﻿@model CRUD2.Models.Articulo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+    <link rel=StyleSheet href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <h3>
+        ¿Desea borrar este artículo?
+    </h3>
+    <div>
+        Artículo     
+    <dl class="dl-horizontal">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Codigo)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Codigo)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Descripcion)
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Precio)
+            </th>
+            <td>
+                @Html.DisplayFor(model => model.Precio)
+            </td>
+            <th></th>
+        </tr>
+    
+    @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-actions no-color">
+                    <input type="submit" value="Borrar" class="btn btn-default" />
+                    @Html.ActionLink("Cancelar", "Index")
+                </div>
+            }
+    </dl>
+    </div>
+</body>
+</html>
